@@ -1,7 +1,6 @@
-﻿
-namespace YamahaReceiverLib.CD;
+﻿namespace YamahaReceiverLib.CD;
 
-public class CDConfig : YamahaAV
+public partial class CDConfig : YamahaAV
 {
     public enum playback
     {
@@ -17,28 +16,34 @@ public class CDConfig : YamahaAV
         fast_forward_end
     }
 
-    public string getPlayInfo()
-    {
-        return HttpGet($"/v1/cd/getPlayInfo");
-    }
+    /// <summary>
+    /// For retrieving playback information of CD
+    /// </summary>
+    /// <returns></returns>
+    public async Task<string> getPlayInfo() => await HttpGet("/v1/cd/getPlayInfo");
 
-    public string setPlayback(playback playback)
-    {
-        return HttpGet($"/v1/cd/setPlayback?playback={playback}");
-    }
+    /// <summary>
+    /// For controlling playback status
+    /// </summary>
+    /// <param name="playback"></param>
+    /// <returns></returns>
+    public async Task<string> setPlayback(playback playback) => await HttpGet($"/v1/cd/setPlayback?playback={playback}");
 
-    public string toggleTray()
-    {
-        return HttpGet($"/v1/cd/toggleTray");
-    }
+    /// <summary>
+    /// For toggling CD tray Open/Close setting
+    /// </summary>
+    /// <returns></returns>
+    public async Task<string> toggleTray() => await HttpGet("/v1/cd/toggleTray");
 
-    public string toggleRepeat()
-    {
-        return HttpGet($"/v1/cd/toggleRepeat");
-    }
+    /// <summary>
+    /// For toggling repeat setting. No direct / discrete setting commands available
+    /// </summary>
+    /// <returns></returns>
+    public async Task<string> toggleRepeat() => await HttpGet("/v1/cd/toggleRepeat");
 
-    public string toggleShuffle()
-    {
-        return HttpGet($"/v1/cd/toggleShuffle");
-    }
+    /// <summary>
+    /// For toggling shuffle setting. No direct / discrete setting commands available
+    /// </summary>
+    /// <returns></returns>
+    public async Task<string> toggleShuffle() => await HttpGet("/v1/cd/toggleShuffle");
 }
