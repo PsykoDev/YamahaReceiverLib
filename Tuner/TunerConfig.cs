@@ -122,7 +122,7 @@ public class TunerConfig : YamahaAV
     public async Task<string> cancelAutoPreset(band band) => await HttpGet($"/v1/tuner/cancelAutoPreset?band={band}");
 
     /// <summary>
-    ///     For moving preset. For example, if excute movePreset?from=4&to=2 for list {[A], [B], [C], [D], [E] ...}, list is
+    ///     For moving preset. For example, if excute movePreset?from=4 to=2 for list {[A], [B], [C], [D], [E] ...}, list is
     ///     arranged as {[A], [D], [B], [C], [E] ...}.
     /// </summary>
     /// <param name="band"></param>

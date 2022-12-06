@@ -121,7 +121,7 @@ public class Network_USBConfig : YamahaAV
     public async Task<string> clearPreset(int num) => await HttpGet($"/v1/netusb/clearPreset?num={num}");
 
     /// <summary>
-    ///     For moving preset. For example, if excute movePreset?from=4&to=2 for list {[A], [B], [C], [D], [E] ...}, list is
+    ///     For moving preset. For example, if excute movePreset?from=4 to=2 for list {[A], [B], [C], [D], [E] ...}, list is
     ///     arranged as {[A], [D], [B], [C], [E] ...}.
     /// </summary>
     /// <param name="from"></param>
