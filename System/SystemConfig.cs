@@ -107,7 +107,7 @@ public class SystemConfig : YamahaAV
     /// </summary>
     /// <param name="boolvalue"></param>
     /// <returns></returns>
-    public async Task<string> setAutoPowerStandby(string boolvalue) => await HttpGet($"/v1/system/setAutoPowerStandby?enable={boolvalue.ToLower()}");
+    public async Task<string> setAutoPowerStandby(bool boolvalue) => await HttpGet($"/v1/system/setAutoPowerStandby?enable={boolvalue.ToString().ToLower()}");
 
     /// <summary>
     ///     For setting Bluetooth Standby
@@ -133,14 +133,14 @@ public class SystemConfig : YamahaAV
     /// </summary>
     /// <param name="boolvalue"></param>
     /// <returns></returns>
-    public async Task<string> setHdmiOut1(string boolvalue) => await HttpGet($"/v1/system/setHdmiOut1?enable={boolvalue.ToLower()}");
+    public async Task<string> setHdmiOut1(bool boolvalue) => await HttpGet($"/v1/system/setHdmiOut1?enable={boolvalue.ToString().ToLower()}");
 
     /// <summary>
     ///     For setting HDMI OUT 2 terminal output status
     /// </summary>
     /// <param name="boolvalue"></param>
     /// <returns></returns>
-    public async Task<string> setHdmiOut2(string boolvalue) => await HttpGet($"/v1/system/setHdmiOut2?enable={boolvalue.ToLower()}");
+    public async Task<string> setHdmiOut2(bool boolvalue) => await HttpGet($"/v1/system/setHdmiOut2?enable={boolvalue.ToString().ToLower()}");
 
     /// <summary>
     ///     For setting IP. This API only set IP as maintain same network connection status (Wired/Wireless Lan/Wireless
@@ -168,7 +168,7 @@ public class SystemConfig : YamahaAV
     /// </summary>
     /// <param name="boolvalue"></param>
     /// <returns></returns>
-    public async Task<string> setIrSensor(string boolvalue) => await HttpGet($"/v1/system/setIrSensor?enable={boolvalue.ToLower()}");
+    public async Task<string> setIrSensor(bool boolvalue) => await HttpGet($"/v1/system/setIrSensor?enable={boolvalue.ToString().ToLower()}");
 
     /// <summary>
     ///     For setting MAC Address Filter
@@ -205,14 +205,14 @@ public class SystemConfig : YamahaAV
     /// </summary>
     /// <param name="boolvalue"></param>
     /// <returns></returns>
-    public async Task<string> setSpeakerA(string boolvalue) => await HttpGet($"/v1/system/setSpeakerA?enable={boolvalue.ToLower()}");
+    public async Task<string> setSpeakerA(bool boolvalue) => await HttpGet($"/v1/system/setSpeakerA?enable={boolvalue.ToString().ToLower()}");
 
     /// <summary>
     ///     For setting Speaker B status
     /// </summary>
     /// <param name="boolvalue"></param>
     /// <returns></returns>
-    public async Task<string> setSpeakerB(string boolvalue) => await HttpGet($"/v1/system/setSpeakerB?enable={boolvalue.ToLower()}");
+    public async Task<string> setSpeakerB(bool boolvalue) => await HttpGet($"/v1/system/setSpeakerB?enable={boolvalue.ToString().ToLower()}");
 
     /// <summary>
     ///     For setting Wired Network. Network connection is switched to wired by using this API. If no parameter is specified,
@@ -277,7 +277,7 @@ public class SystemConfig : YamahaAV
     /// </summary>
     /// <param name="boolvalue"></param>
     /// <returns></returns>
-    public async Task<string> setZoneBVolumeSync(string boolvalue) => await HttpGet($"/v1/system/setZoneBVolumeSync?enable={boolvalue.ToLower()}");
+    public async Task<string> setZoneBVolumeSync(bool boolvalue) => await HttpGet($"/v1/system/setZoneBVolumeSync?enable={boolvalue.ToString().ToLower()}");
 
     /// <summary>
     ///     For updating Bluetooth (Sink) device list. This API is available only when “bluetooth_tx_setting” is true under

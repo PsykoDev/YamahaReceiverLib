@@ -46,10 +46,10 @@ public class TunerConfig : YamahaAV
     /// <summary>
     ///     For retrieving Tuner preset information
     /// </summary>
-    /// <param name="zone"></param>
+    /// <param name="zone">Values: "main" / "zone2" / "zone3" / "zone4"</param>
     /// <param name="band"></param>
     /// <returns></returns>
-    public async Task<string> getPresetInfo(zoneTuner zone, string band) => await HttpGet($"/v1/{zone}/getPresetInfo?band={band}");
+    public async Task<string> getPresetInfo(string band, zoneTuner zone = zoneTuner.main) => await HttpGet($"/v1/{zone}/getPresetInfo?band={band}");
 
     /// <summary>
     ///     For retrieving playback information of Tuner
@@ -75,11 +75,11 @@ public class TunerConfig : YamahaAV
     /// <summary>
     ///     For recalling a Tuner preset
     /// </summary>
-    /// <param name="zone"></param>
+    /// <param name="zone">Values: "main" / "zone2" / "zone3" / "zone4"</param>
     /// <param name="band"></param>
     /// <param name="num"></param>
     /// <returns></returns>
-    public async Task<string> recallPreset(zoneTuner zone, band band, int num) => await HttpGet($"/v1/tuner/recallPreset?zone={zone}&band={band}&num={num}");
+    public async Task<string> recallPreset(band band, int num, zoneTuner zone = zoneTuner.main) => await HttpGet($"/v1/tuner/recallPreset?zone={zone}&band={band}&num={num}");
 
     /// <summary>
     ///     For selecting Tuner preset. Call this API after change the target zone’s input to Tuner. It is possible to change

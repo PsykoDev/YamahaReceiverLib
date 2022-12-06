@@ -101,10 +101,10 @@ public class Network_USBConfig : YamahaAV
     /// <summary>
     ///     For recalling a content preset
     /// </summary>
-    /// <param name="zone"></param>
+    /// <param name="zone">Values: "main" / "zone2" / "zone3" / "zone4"</param>
     /// <param name="num"></param>
     /// <returns></returns>
-    public async Task<string> recallPreset(zoneNetUsb zone, int num) => await HttpGet($"/v1/netusb/recallPreset?zone={zone}&num={num}");
+    public async Task<string> recallPreset(int num, zoneNetUsb zone = zoneNetUsb.main) => await HttpGet($"/v1/netusb/recallPreset?zone={zone}&num={num}");
 
     /// <summary>
     ///     For registering current content to a preset. Presets are common use among Net/USB related input sources.
@@ -152,10 +152,10 @@ public class Network_USBConfig : YamahaAV
     /// <summary>
     ///     For recalling a content via playback history
     /// </summary>
-    /// <param name="zone"></param>
+    /// <param name="zone">Values: "main" / "zone2" / "zone3" / "zone4"</param>
     /// <param name="num"></param>
     /// <returns></returns>
-    public async Task<string> recallRecentItem(zoneNetUsb zone, int num) => await HttpGet($"/v1/netusb/recallRecentItem?zone={zone}&num={num}");
+    public async Task<string> recallRecentItem(int num, zoneNetUsb zone = zoneNetUsb.main) => await HttpGet($"/v1/netusb/recallRecentItem?zone={zone}&num={num}");
 
     /// <summary>
     ///     For clearing all recent history informaiton
