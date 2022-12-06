@@ -231,4 +231,12 @@ public class ZoneConfig : YamahaAV
     /// <returns></returns>
     public async Task<string> setAdaptiveDrc(zone zone, string boolvalue) => await HttpGet($"/v1/{zone}/setAdaptiveDrc?enable={boolvalue.ToLower()}");
 
+    /// <summary>
+    /// idk what is that
+    /// </summary>
+    /// <param name="zone"></param>
+    /// <param name="boolvalue"></param>
+    /// <returns></returns>
+    public async Task<string> setContentsDisplay(zone zone, string boolvalue) => await HttpGet($"/v1/{zone}/setContentsDisplay?enable={boolvalue.ToLower()}");
+
 }
