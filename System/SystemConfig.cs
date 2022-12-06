@@ -286,4 +286,16 @@ public class SystemConfig : YamahaAV
     /// </summary>
     /// <returns></returns>
     public async Task<string> updateBluetoothDeviceList() => await HttpGet("/v1/system/updateBluetoothDeviceList");
+
+    /// <summary>
+    /// For check if new update is available
+    /// </summary>
+    /// <returns></returns>
+    public async Task<string> checkNetworkUpdate() => await HttpGet("/v1/system/checkNetworkUpdate");
+
+    /// <summary>
+    /// For check if new update is available through wifi or lan
+    /// </summary>
+    /// <returns></returns>
+    public async Task<string> isNewFirmwareAvailable(string type  = "network") => await HttpGet($"/v1/system/isNewFirmwareAvailable=type{type}");
 }

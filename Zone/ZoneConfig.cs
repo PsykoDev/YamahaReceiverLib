@@ -213,4 +213,21 @@ public class ZoneConfig : YamahaAV
     /// <param name="mode"></param>
     /// <returns></returns>
     public async Task<string> setLinkAudioQuality(zone zone, string mode) => await HttpGet($"/v1/{zone}/setLinkAudioQuality?mode={mode}");
+
+    /// <summary>
+    /// For setting Extra Bass in each Zone.
+    /// </summary>
+    /// <param name="zone"></param>
+    /// <param name="boolvalue"></param>
+    /// <returns></returns>
+    public async Task<string> setExtraBass(zone zone, string boolvalue) => await HttpGet($"/v1/{zone}/setExtraBass?enable={boolvalue.ToLower()}");
+
+    /// <summary>
+    /// For setting Adaptive DRC in each Zone.
+    /// </summary>
+    /// <param name="zone"></param>
+    /// <param name="boolvalue"></param>
+    /// <returns></returns>
+    public async Task<string> setAdaptiveDrc(zone zone, string boolvalue) => await HttpGet($"/v1/{zone}/setAdaptiveDrc?enable={boolvalue.ToLower()}");
+
 }
