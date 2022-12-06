@@ -109,12 +109,13 @@ public class ZoneConfig : YamahaAV
     public async Task<string> setEnhancer(zone zone, string boolvalue) => await HttpGet($"/v1/{zone}/setEnhancer?enable={boolvalue.ToLower()}");
 
     /// <summary>
-    ///     For setting Tone Control in each Zone. Values of specifying range and steps are different.
+    /// For setting Tone Control in each Zone. Values of specifying range and steps are different.
     /// </summary>
     /// <param name="zone"></param>
-    /// <param name="boolvalue"></param>
+    /// <param name="bass"></param>
+    /// <param name="mode"></param>
     /// <returns></returns>
-    public async Task<string> setToneControl(zone zone, string boolvalue) => await HttpGet($"/v1/{zone}/setToneControl?enable={boolvalue.ToLower()}");
+    public async Task<string> setToneControl(zone zone, int? treble, int? bass, string mode = "Manual") => await HttpGet($"/v1/{zone}/setToneControl?mode={mode}&bass={bass}&treble={treble}");
 
     /// <summary>
     ///     For setting Equalizer in each Zone. Values of specifying range and steps are different
